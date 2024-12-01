@@ -1,0 +1,31 @@
+print("Enter 'A' for Addition.")
+print("Enter 'S' for Subtraction.")
+print("Enter 'M' for Multiplication.")
+print("Enter 'D' for Division.")
+
+while True:
+    choice = input('Enter choice (A, S, M, D): ')
+
+    if choice.upper() in ('A','ADD','ADDITION', 'S', 'SUB', 'SUBTRACTION', 'M', 'MULTIPLE', 'MULTIPLICATION' , 'D', 'DIVIDE', 'DIVISION'):
+    
+        num1 = float(input('Enter First Number: '))
+        num2 = float(input('Enter Second Number: '))
+    
+        if choice.upper() in ('A','ADD','ADDITION'):
+            print(num1, '+', num2, '=', round(add(num1,num2),2))
+        
+        elif choice.upper() in ('S', 'SUBTRACT', 'SUBTRACTION'):
+            print(num1, '-', num2, '=', round(sub(num1, num2),2))
+    
+        elif choice.upper() in ('M', 'MULTIPLE', 'MULTIPLICATION'):
+            print(num1, '*', num2, '=', round(mul(num1, num2),2))
+    
+        elif choice.upper() in ('D', 'DIVIDE', 'DIVISION'):
+            print(num1, '/', num2, '=', round(div(num1, num2),2))
+    
+    else:
+        print('Please input a correct choice. (A, S, M, D)')
+
+    next_calculation = input("Want to perform another calculation? (Yes/No?): ")
+    if next_calculation.lower() in ('n', 'no', 'nope', 'noo'):
+        break
